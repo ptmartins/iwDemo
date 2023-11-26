@@ -1,4 +1,4 @@
-import {Button, Checkbox, RadioBtn, ToggleSwitch} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { MdDangerous } from "react-icons/md";
@@ -46,6 +46,10 @@ function App() {
       <section className={styles.section}>
         <h2 className={styles.section_title}>Toggle switch</h2>
         <ToggleSwitch label="Radio button two" name="radioDemo" checked={true} />
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Social checkboxes</h2>
+        <SocialCheckboxes items={['Instagram', 'Dribbble', 'Spotify', 'Slack', 'Discord', 'Framer', 'Sketch', 'Figma']} />
       </section>
     </div>
   );

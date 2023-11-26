@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  background-color: rgb(245, 245, 245);
   color: #2a2a2a;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
