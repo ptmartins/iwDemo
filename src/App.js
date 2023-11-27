@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -111,6 +111,10 @@ function App() {
           <ProgressBar progress={progress} label="true"/>
           <span>Simple progress bar with label</span>
         </div>
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>iwLoading</h2>
+        <IWLoading />
       </section>
     </div>
   );
