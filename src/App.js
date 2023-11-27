@@ -1,4 +1,4 @@
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -69,6 +69,10 @@ function App() {
         <Alert type="info" message="This is an info alert!" />
         <br />
         <Alert type="success" message="This is a success alert!" />
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Avatars</h2>
+        <Avatar />
       </section>
     </div>
   );
