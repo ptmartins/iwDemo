@@ -29,7 +29,9 @@ function App() {
   return (
     <div>
       <h1 className={styles.title}>Imagen UI Demo</h1>
-      {/* Section Buttons */}
+
+
+      {/* Buttons */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Buttons</h2>
         <Button onClick={() => showMessage()}>Button</Button>
@@ -39,7 +41,9 @@ function App() {
         <Button type="warning">Warning</Button>
         <Button state="disabled">Disabled</Button>
       </section>
-      {/* Section Button with icons */}
+
+
+      {/* Buttons with icons */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Buttons with icons</h2>
         <Button>Button <FaInfoCircle /> </Button>
@@ -49,27 +53,35 @@ function App() {
         <Button type="warning">Warning <IoWarning /> </Button>
         <Button state="disabled">Disabled <FaInfoCircle /> </Button>
       </section>
-      {/* Section Inputs */}
+
+
+      {/* Checkboxes */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Checkbox</h2>
         <Checkbox label="Default input checkbox" />
         <Checkbox label="Cheked input checkbox" checked={true} />
       </section>
+
+      {/* Radio Buttons */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Radio Buttons</h2>
         <RadioBtn label="Radio button one" name="radioDemo" />
         <RadioBtn label="Radio button two" name="radioDemo" checked={true} />
       </section>
+
+      {/* Toggle Switch */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Toggle switch</h2>
         <ToggleSwitch label="Radio button two" name="radioDemo" checked={true} />
       </section>
+
+      {/* Social checkboxes */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Social checkboxes</h2>
         <SocialCheckboxes items={['Instagram', 'Dribbble', 'Spotify', 'Slack', 'Discord', 'Framer', 'Sketch', 'Figma']} />
       </section>
 
-      {/* Accordion */}
+      {/* Accordions */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Accordion</h2>
         <Accordion items={accordionItems} />
