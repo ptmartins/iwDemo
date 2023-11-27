@@ -1,7 +1,7 @@
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
-import { MdDangerous } from "react-icons/md";
+import { IoMdAlert } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 import styles from './App.module.css';
 
@@ -32,7 +32,7 @@ function App() {
         <h2 className={styles.section_title}>Buttons with icons</h2>
         <Button>Button <FaInfoCircle /> </Button>
         <Button type="primary">Primary <FaArrowRight /> </Button>
-        <Button type="danger">Danger <MdDangerous /> </Button>
+        <Button type="danger">Danger <IoMdAlert /> </Button>
         <Button type="success">Success <FaCheckCircle /> </Button>
         <Button type="warning">Warning <IoWarning /> </Button>
         <Button state="disabled">Disabled <FaInfoCircle /> </Button>
@@ -59,6 +59,16 @@ function App() {
       <section className={styles.section}>
         <h2 className={styles.section_title}>Accordion</h2>
         <Accordion items={accordionItems} />
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Alerts</h2>
+        <Alert type="error" message="This is an error alert!" />
+        <br />
+        <Alert type="warning" message="This is a warning alert!" />
+        <br />
+        <Alert type="info" message="This is an info alert!" />
+        <br />
+        <Alert type="success" message="This is a success alert!" />
       </section>
     </div>
   );

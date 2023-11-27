@@ -1,0 +1,31 @@
+.alert {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    gap: .75rem;
+    padding: .75rem;
+}
+
+.error {
+    background-color: #fef5f5;
+    border-color: #f56565;
+    color: #f56565;
+}
+
+.warning {
+    background-color: #FEFAF0;
+    border-color: #dbac20;
+    color: #856404;
+}
+
+.info {
+    background-color: #ebf8ff;
+    border-color: #2b6cb0;
+    color: #2b6cb0;
+}
+
+.success {
+    background-color: #c5ffc6;
+    border-color: #155724;
+    color: #155724;
+}
