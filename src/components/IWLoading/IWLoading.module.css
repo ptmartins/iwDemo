@@ -2,11 +2,12 @@
     align-items: center;
     display: flex;
     height: 75px;
-    max-width: 120px;
+    width: 120px;
     position: relative;
 }
 
 .bar {
+    background-color: #606060;
     text-indent: -9999em;
     margin: 30px auto;
     position: relative;
@@ -17,6 +18,7 @@
 
 .bar::before, 
 .bar::after {
+    background-color: inherit;
     content: '';
     position: absolute;
     top: 0;
@@ -25,10 +27,9 @@
 .bar, 
 .bar::before, 
 .bar:after {
-    background-color: #606060;
     animation: load1 1s infinite ease-in-out;
-    width: 15px;
     height: 40px;
+    width: 15px;
 }
 
 .bar::before {

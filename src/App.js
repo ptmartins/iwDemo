@@ -68,10 +68,14 @@ function App() {
         <h2 className={styles.section_title}>Social checkboxes</h2>
         <SocialCheckboxes items={['Instagram', 'Dribbble', 'Spotify', 'Slack', 'Discord', 'Framer', 'Sketch', 'Figma']} />
       </section>
+
+      {/* Accordion */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Accordion</h2>
         <Accordion items={accordionItems} />
       </section>
+
+      {/* Alerts */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Alerts</h2>
         <Alert type="error" message="This is an error alert!" />
@@ -82,6 +86,8 @@ function App() {
         <br />
         <Alert type="success" message="This is a success alert!" />
       </section>
+
+      {/* Avatars */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Avatars</h2>
         <div className={styles.item}>
@@ -101,6 +107,8 @@ function App() {
           <span>Thumbnail Avatar</span>
         </div>
       </section>
+
+      {/* Progress Bar */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Progress Bar</h2>
         <div className={styles.item}>
@@ -112,9 +120,18 @@ function App() {
           <span>Simple progress bar with label</span>
         </div>
       </section>
+
+      {/* iwLoading */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>iwLoading</h2>
-        <IWLoading />
+        <div className={styles.item}>
+          <IWLoading />
+          <span>Default iwLoading animation</span>
+        </div>
+        <div className={styles.item}>
+          <IWLoading color="#335ed7"/>
+          <span>Colored iwLoading animation</span>
+        </div>
       </section>
     </div>
   );
