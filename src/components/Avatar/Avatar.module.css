@@ -1,0 +1,24 @@
+.avatar {
+    align-items: center;
+    background-color: #333;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+}
+
+.icon {
+    font-size: 34px;
+    transform: translateY(5px); 
+}
+
+.image {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+}

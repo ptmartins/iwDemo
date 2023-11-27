@@ -1,0 +1,19 @@
+.wrapper {
+    align-items: center;
+    display: flex;
+    gap: .75rem;
+    min-width:860px;
+}
+
+.progress {
+    background-color: #ccc;
+    border-radius: 50px;
+    height: 10px;
+    min-width: 800px;
+}
+
+.bar {
+    background-color: #335ed7;
+    border-radius: 50px;
+    height: 100%;
+}   

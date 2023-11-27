@@ -1,4 +1,5 @@
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar} from './components';
+import {useState, useEffect} from 'react';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -13,6 +14,17 @@ function App() {
     { title: 'Item 2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
     { title: 'Item 3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
   ];
+  let [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if(progress <= 100) {
+        setProgress(progress++);
+      }
+    }, 800)
+
+    return () => clearInterval(timer);
+
+  }, [])
 
   return (
     <div>
@@ -72,10 +84,37 @@ function App() {
       </section>
       <section className={styles.section}>
         <h2 className={styles.section_title}>Avatars</h2>
-        <Avatar />
+        <div className={styles.item}>
+          <Avatar />
+          <span>Icon Avatar</span>
+        </div>
+        <div className={styles.item}>
+          <Avatar txt="PM"/>
+          <span>Initials Avatar</span>
+        </div>
+        <div className={styles.item}>
+          <Avatar txt="Joao Silva" />
+          <span>String Avatar</span>
+        </div>
+        <div className={styles.item}>
+          <Avatar src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Lorem ipsum" />
+          <span>Thumbnail Avatar</span>
+        </div>
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Progress Bar</h2>
+        <div className={styles.item}>
+          <ProgressBar progress={progress} />
+          <span>Simple progress bar</span>
+        </div>
+        <div className={styles.item}>
+          <ProgressBar progress={progress} label="true"/>
+          <span>Simple progress bar with label</span>
+        </div>
       </section>
     </div>
   );
 }
 
 export default App;
+ 
