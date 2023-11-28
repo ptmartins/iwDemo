@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading, Breadcrumbs, StarRating, Modal} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, IWLoading, Breadcrumbs, StarRating, Modal, Skeleton} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -204,6 +204,10 @@ function App() {
                           onClose={closeModal}
                           actions={modalActions}/>
         }
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Loading Skeleton</h2>
+        <Skeleton />
       </section>
     </div>
   );
