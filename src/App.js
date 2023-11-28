@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading, Breadcrumbs, StarRating} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading, Breadcrumbs, StarRating, Modal} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -34,6 +34,26 @@ function App() {
   const handleStarRating = (newRating) => {
     setStarRating(newRating);
   };
+
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const handleAction = () => {
+    alert('Modal action clicked!');
+  };
+
+  const modalActions = [
+    {
+      label: 'Action', 
+      onClick: handleAction 
+    },
+  ];
 
   return (
     <div>
@@ -175,6 +195,15 @@ function App() {
       <section className={styles.section}>
         <h2 className={styles.section_title}>Star Rating</h2>
         <StarRating rating={starRating} onRatingChange={handleStarRating} /> 
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Modal</h2>
+        <Button onClick={() => openModal()}>Open Modal</Button>
+        {showModal && <Modal          
+                          title="Modal Component"
+                          onClose={closeModal}
+                          actions={modalActions}/>
+        }
       </section>
     </div>
   );
