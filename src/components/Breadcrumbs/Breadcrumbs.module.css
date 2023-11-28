@@ -1,0 +1,20 @@
+.breadcrumbs {
+    align-items: center;
+    color: #9a9b9e;
+    display: flex;
+}
+
+.breadcrumbs span {
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.breadcrumbs span:hover {
+    color: #333;
+}
+
+.breadcrumbs i {
+    align-items: center;
+    display: flex;
+    margin: 0 .375rem;
+}

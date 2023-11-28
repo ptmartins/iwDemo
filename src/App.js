@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, iwLoading, IWLoading, Breadcrumbs, StarRating} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
+import {FiChevronsRight} from 'react-icons/fi';
 import styles from './App.module.css';
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
     { title: 'Item 2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
     { title: 'Item 3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
   ];
+  const breadcrumbItems = ['Home', 'About', 'Team'];
+  
   let [progress, setProgress] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
       if(progress <= 100) {
@@ -24,11 +28,21 @@ function App() {
 
     return () => clearInterval(timer);
 
-  }, [])
+  }, []);
+
+  const [starRating, setStarRating] = useState(3.7);
+  const handleStarRating = (newRating) => {
+    setStarRating(newRating);
+  };
 
   return (
     <div>
-      <h1 className={styles.title}>Imagen UI Demo</h1>
+      <h1 className={styles.title}>
+        Imagen UI Demo 
+        <span>
+          <ToggleSwitch />  
+        </span> 
+      </h1>
 
 
       {/* Buttons */}
@@ -72,7 +86,7 @@ function App() {
       {/* Toggle Switch */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Toggle switch</h2>
-        <ToggleSwitch label="Radio button two" name="radioDemo" checked={true} />
+        <ToggleSwitch />
       </section>
 
       {/* Social checkboxes */}
@@ -144,6 +158,23 @@ function App() {
           <IWLoading color="#335ed7"/>
           <span>Colored iwLoading animation</span>
         </div>
+      </section>
+
+      {/* Breadcrumbs */}
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Breadcrumbs</h2>
+        <div className={styles.item}>
+          <Breadcrumbs items={breadcrumbItems}/>
+          <span>Default breadcrumbs</span>
+        </div>
+        <div className={styles.item}>
+          <Breadcrumbs items={breadcrumbItems} icon={<FiChevronsRight />}/>
+          <span>Breadcrumbs with custom icon</span>
+        </div>
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Star Rating</h2>
+        <StarRating rating={starRating} onRatingChange={handleStarRating} /> 
       </section>
     </div>
   );
