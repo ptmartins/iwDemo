@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, IWLoading, Breadcrumbs, StarRating, Modal, Skeleton} from './components';
+import {Button, Checkbox, RadioBtn, ToggleSwitch, SocialCheckboxes, Accordion, Alert, Avatar, ProgressBar, IWLoading, Breadcrumbs, StarRating, Modal, Skeleton, TabMenu} from './components';
 import { FaArrowRight } from "react-icons/fa6";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { IoMdAlert } from "react-icons/io";
@@ -53,6 +53,12 @@ function App() {
       label: 'Action', 
       onClick: handleAction 
     },
+  ];
+
+  const tabs = [
+    { title: 'Menu 1', content: <p>This is the content of Tab 1.</p> },
+    { title: 'Menu item two', content: <p>This is the content of Tab 2.</p> },
+    { title: 'Tab 3', content: <p>This is the content of Tab 3.</p> },
   ];
 
   return (
@@ -192,10 +198,14 @@ function App() {
           <span>Breadcrumbs with custom icon</span>
         </div>
       </section>
+
+      {/* Star Rating */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Star Rating</h2>
         <StarRating rating={starRating} onRatingChange={handleStarRating} /> 
       </section>
+
+      {/* Modal */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Modal</h2>
         <Button onClick={() => openModal()}>Open Modal</Button>
@@ -205,9 +215,17 @@ function App() {
                           actions={modalActions}/>
         }
       </section>
+
+      {/* Loading Skeleton */}
       <section className={styles.section}>
         <h2 className={styles.section_title}>Loading Skeleton</h2>
         <Skeleton />
+      </section>
+
+      {/* Tabbed Menu */}
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Tabbed Menu</h2>
+        <TabMenu items={tabs} />
       </section>
     </div>
   );
