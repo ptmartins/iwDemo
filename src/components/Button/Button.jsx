@@ -2,23 +2,27 @@ import styles from './Button.module.css';
 
 const Button = (props) => {
 
-    let btnClasses = null;
+    let btnClasses = styles.btn;
+
+    if(props.variant === 'outlined') {
+        btnClasses += ` ${styles.btn__outlined}`;
+    }
 
     switch(props.type) {
         case 'primary':
-            btnClasses = styles.btn__primary;
+            btnClasses += ` ${styles.btn__primary}`;
             break;
         case 'danger':
-            btnClasses = styles.btn__danger;
+            btnClasses += ` ${styles.btn__danger}`;
             break;
         case 'success':
-            btnClasses = styles.btn__success;
+            btnClasses += ` ${styles.btn__success}`;
             break;
         case 'warning':
-            btnClasses = styles.btn__warning;
+            btnClasses += ` ${styles.btn__warning}`;
             break;
         default: 
-            btnClasses = '';
+            btnClasses += '';
             break;
     }
 
@@ -27,7 +31,7 @@ const Button = (props) => {
     }
 
     return(
-        <button {...props} className={`${styles.btn} ${btnClasses}`}> {props.children} </button>
+        <button {...props} className={btnClasses}> {props.children} </button>
     )
 }
 

@@ -82,6 +82,17 @@ function App() {
         <Button state="disabled">Disabled</Button>
       </section>
 
+      {/* Outlined Buttons */}
+      <section className={styles.section}>
+        <h2 className={styles.section_title}>Outlined Buttons</h2>
+        <Button variant="outlined" onClick={() => showMessage()}>Button</Button>
+        <Button variant="outlined" type="primary">Primary</Button>
+        <Button variant="outlined" type="danger">Danger</Button>
+        <Button variant="outlined" type="success">Success</Button>
+        <Button variant="outlined" type="warning">Warning</Button>
+        <Button variant="outlined" state="disabled">Disabled</Button>
+      </section>
+
 
       {/* Buttons with icons */}
       <section className={styles.section}>
